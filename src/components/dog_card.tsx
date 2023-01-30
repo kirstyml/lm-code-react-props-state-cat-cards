@@ -7,7 +7,6 @@ interface DogCardProps{
  }
 
 const DogCard : React.FC<DogCardProps> = ({ name, species, favFoods, birthYear, dogIndex }) => {
-        console.log(name);
         return (
             <div className="card">
                 <h3 className="card__text card__header">{name}</h3>

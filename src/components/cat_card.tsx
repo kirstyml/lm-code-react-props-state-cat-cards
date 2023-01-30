@@ -120,7 +120,6 @@ interface CatCardProps {
 }
 
 const CatCard: React.FC<CatCardProps> = ({ name, species, favFoods, birthYear, catIndex }) => {
-    console.log(name);
     return (
         <div className="card">
             <h3 className="card__text card__header">{name}</h3>
