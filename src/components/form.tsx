@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Cat from "../data/cat";
 import Dog from "../data/dog";
 
@@ -14,7 +14,7 @@ const AddAnimalForm : React.FC<AddAnimalFormProps> = ({ addCat, addDog }) => {
     const [ birthYearInputValue, setBirthYearInputValue ] = useState<string>('');
     const [ typeInputValue, setTypeInputValue ] = useState<string>('cat');
 
-    const handleSubmit = (event: any) => {
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) : void => {
         console.log("handleSubmit!");
         const favFoods = foodsInputValue.split(",");
         const birthYear = parseInt(birthYearInputValue);
