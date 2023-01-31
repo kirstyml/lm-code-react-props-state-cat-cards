@@ -136,6 +136,33 @@ body {
 	max-width: 1.875em;
 }
 
+.form {
+	display: flex;
+	flex-direction: column;
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+.form__label {
+	font-family: 'SleepyCat';
+	font-size: 1.7rem;
+	margin-right: 1rem;
+}
+
+.form__input {
+	font-family: 'SleepyCat';
+	font-size: 1.25rem;
+	margin: 0.25rem 0 1rem 0;
+}
+
+.form__radio {
+	margin-right: 0.5rem;
+}
+
+.form__fieldset {
+	margin: 1rem 0;
+}
+
 @media only screen and (max-width: 405px) {
 	.header__title {
 		padding-left: 1.5rem;

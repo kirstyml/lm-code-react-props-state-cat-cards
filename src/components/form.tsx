@@ -15,7 +15,6 @@ const AddAnimalForm : React.FC<AddAnimalFormProps> = ({ addCat, addDog }) => {
     const [ typeInputValue, setTypeInputValue ] = useState<string>('cat');
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) : void => {
-        console.log("handleSubmit!");
         const favFoods = foodsInputValue.split(",");
         const birthYear = parseInt(birthYearInputValue);
         if(typeInputValue === "cat") {
@@ -29,23 +28,23 @@ const AddAnimalForm : React.FC<AddAnimalFormProps> = ({ addCat, addDog }) => {
 
 
     return (
-        <form onSubmit={(event) => handleSubmit(event)}>
-            <fieldset>
-                <legend>Choose Cat or Dog:</legend>
-                <input name="type" type="radio" value="cat" onChange={(event) => setTypeInputValue(event.target.value)} checked />
-                <label htmlFor="cat">Cat</label>
-                <input name="type" type="radio" value="dog" onChange={(event) => setTypeInputValue(event.target.value)} />
-                <label htmlFor="dog">Dog</label>
+        <form className="form" onSubmit={(event) => handleSubmit(event)}>
+            <fieldset className="form__fieldset">
+                <legend className="form__label">Choose Cat or Dog:</legend>
+                <input className="form__radio" name="type" type="radio" value="cat" onChange={(event) => setTypeInputValue(event.target.value)} checked />
+                <label className="form__label" htmlFor="cat">Cat</label>
+                <input className="form__radio" name="type" type="radio" value="dog" onChange={(event) => setTypeInputValue(event.target.value)} />
+                <label className="form__label" htmlFor="dog">Dog</label>
             </fieldset>
-            <label htmlFor="name">Name:</label>
-            <input value={nameInputValue} name="cheese" type="text" onChange={(event) => setNameInputValue(event.target.value)} />
-            <label htmlFor="species">Species:</label>
-            <input value={speciesInputValue} name="species" type="text" onChange={(event) => setSpeciesInputValue(event.target.value)} />
-            <label htmlFor="foods">Favourite foods:</label>
-            <input value={foodsInputValue} name="foods" type="text" onChange={(event) => setFoodsInputValue(event.target.value)} />
-            <label htmlFor="birthYear">Birth year:</label>
-            <input value={birthYearInputValue} name="birthYear" type="text" onChange={(event) => setBirthYearInputValue(event.target.value)} />
-            <input type="submit" value="Add animal!" />
+            <label className="form__label" htmlFor="name">Name:</label>
+            <input className="form__input" value={nameInputValue} name="cheese" type="text" onChange={(event) => setNameInputValue(event.target.value)} />
+            <label className="form__label" htmlFor="species">Species:</label>
+            <input className="form__input" value={speciesInputValue} name="species" type="text" onChange={(event) => setSpeciesInputValue(event.target.value)} />
+            <label className="form__label" htmlFor="foods">Favourite foods:</label>
+            <input className="form__input" value={foodsInputValue} name="foods" type="text" onChange={(event) => setFoodsInputValue(event.target.value)} />
+            <label className="form__label" htmlFor="birthYear">Birth year:</label>
+            <input className="form__input" value={birthYearInputValue} name="birthYear" type="text" onChange={(event) => setBirthYearInputValue(event.target.value)} />
+            <input className="form__input" type="submit" value="Add animal!" />
         </form>
     )
 };

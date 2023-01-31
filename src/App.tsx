@@ -10,6 +10,7 @@ import DogCard from './components/dog_card';
 import catData from './data/cat-data';
 import dogData from './data/dog-data';
 import AddAnimalForm from './components/form';
+import { v4 as uuidv4 } from 'uuid';
 
 
 function App(): JSX.Element {
@@ -23,12 +24,12 @@ function App(): JSX.Element {
 	const dogCount = dogs.length;
 
 	const addCat = (newCat: Cat) => {
-		console.log("Adding cat!");
+		newCat.id = uuidv4();
 		setCats([...cats, newCat]);
 	}
 
 	const addDog = (newDog: Dog) => {
-		console.log("Adding Dog!");
+		newDog.id = uuidv4();
 		setDogs([...dogs, newDog]);
 	}
 
